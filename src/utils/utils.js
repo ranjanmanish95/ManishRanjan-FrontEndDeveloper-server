@@ -13,7 +13,10 @@ export async function getLaunches(){
        let launchData = new Launch({
           flight_number : response[i].flight_number,
           mission_name: response[i].mission_name,
-          rocket_name: response[i].rocket.rocket_name
+          rocket_name: response[i].rocket.rocket_name,
+          launch_success: response[i].launch_success,
+          upcoming: response[i].upcoming,
+          launch_year: response[i].launch_year
         })
 
         launchData.save().then(()=>{
@@ -82,3 +85,5 @@ export async function getPayload(){
         })
     }
 }
+
+

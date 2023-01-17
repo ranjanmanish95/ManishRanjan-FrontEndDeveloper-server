@@ -5,7 +5,7 @@ const payloadSchema = new mongoose.Schema({
       required: true
     },
     payload_mass_kg: {
-        type: String
+        type: Number
     }, 
     manufacturer: {
         type: String

@@ -16,7 +16,6 @@ const historySchema = new mongoose.Schema({
        type: String,
        required: true
     }
-
 })
 
 export const History = mongoose.model('History',historySchema); 

@@ -11,6 +11,15 @@ const launchSchema = new mongoose.Schema({
     rocket_name: {
         type: String,
         required: true
+    },
+    launch_success:{
+        type: Boolean
+    },
+    upcoming:{
+        type: Boolean
+    },
+    launch_year:{
+        type: String
     }
 })
 
