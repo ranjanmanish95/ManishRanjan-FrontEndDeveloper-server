@@ -1,5 +1,6 @@
 import express from 'express';
 import { History } from '../models/history.js';
+
 const historyRouter = new express.Router();
 
 historyRouter.get('/history', async (req,res)=>{

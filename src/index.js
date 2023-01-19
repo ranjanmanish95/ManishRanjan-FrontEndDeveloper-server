@@ -5,6 +5,7 @@ import capsuleRouter from './routers/capsules.js';
 import historyRouter from './routers/history.js';
 import launchRouter from './routers/launch.js';
 import payloadRouter from './routers/payload.js';
+import contactRouter from './routers/contact.js';
 import cors from 'cors';
 
 const app = express();
@@ -13,6 +14,8 @@ app.use(cors({
   origin: 'http://localhost:3000',
   credentials: true
 }));
+
+app.use("/photos",express.static('photos'));
 
 const port = process.env.PORT || 8001;
 mongoose.set('strictQuery', true);
@@ -36,6 +39,7 @@ app.use(capsuleRouter);
 app.use(payloadRouter);
 app.use(historyRouter);
 app.use(launchRouter);
+app.use(contactRouter);
 
 app.listen(8001,(err)=>{
   if(err){
