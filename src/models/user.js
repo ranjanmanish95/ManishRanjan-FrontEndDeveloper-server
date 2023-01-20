@@ -3,6 +3,7 @@ import validator from "validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+//userschema model
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -41,6 +42,7 @@ const userSchema = new mongoose.Schema({
   ]
 });
 
+//defining generateauthtoken method on userSchema instances.Will generate jwt auth token
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign({ _id: user._id.toString() }, "manishranjan", {
@@ -51,6 +53,7 @@ userSchema.methods.generateAuthToken = async function () {
   return token;
 };
 
+//defining findByCredentials method on userSchema instances. Will check and find user by their email and password.
 userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) {

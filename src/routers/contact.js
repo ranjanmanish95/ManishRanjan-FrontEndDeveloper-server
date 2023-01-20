@@ -4,6 +4,7 @@ import { Contact } from "../models/contact.js";
 
 const contactRouter = new express.Router();
 
+//contact routes
 contactRouter.post("/contact", async (req, res) => {
   const contact = new Contact(req.body);
   try {

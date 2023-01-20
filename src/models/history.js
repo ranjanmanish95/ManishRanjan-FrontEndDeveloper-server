@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//history Schema model
 const historySchema = new mongoose.Schema({
   id: {
     type: Number,

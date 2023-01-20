@@ -3,6 +3,7 @@ import { History } from "../models/history.js";
 
 const historyRouter = new express.Router();
 
+//history routes
 historyRouter.get("/history", async (req, res) => {
   try {
     const history = await History.find({});

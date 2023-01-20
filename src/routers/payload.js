@@ -2,6 +2,7 @@ import express from "express";
 import { Payload } from "../models/payload.js";
 
 const payloadRouter = new express.Router();
+//payload routes
 payloadRouter.get("/payload", async (req, res) => {
   try {
     const payload = await Payload.find({});

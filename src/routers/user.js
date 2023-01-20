@@ -3,6 +3,7 @@ import { User } from "../models/user.js";
 import auth from "../middleware/auth.js";
 const userRouter = new express.Router();
 
+//user routes
 userRouter.post("/users", async (req, res) => {
   const user = new User(req.body);
   try {

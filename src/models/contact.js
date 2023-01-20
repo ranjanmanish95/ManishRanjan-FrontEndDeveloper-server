@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//contact route model
 const contactSchema = new mongoose.Schema({
   name: {
     type: String,

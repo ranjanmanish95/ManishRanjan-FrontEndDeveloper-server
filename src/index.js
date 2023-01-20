@@ -9,6 +9,7 @@ import contactRouter from "./routers/contact.js";
 import cors from "cors";
 
 const app = express();
+//middlewares
 app.use(express.json());
 app.use(
   cors({
@@ -16,9 +17,10 @@ app.use(
     credentials: true
   })
 );
-
+//will serve static images in photos directory
 app.use("/photos", express.static("photos"));
 
+//database(mongodb) connection
 const port = process.env.PORT || 8001;
 mongoose.set("strictQuery", true);
 const connectionURL =
@@ -36,6 +38,7 @@ mongoose
     console.log("Error occured");
   });
 
+//middleware routers
 app.use(userRouter);
 app.use(capsuleRouter);
 app.use(payloadRouter);
@@ -43,6 +46,7 @@ app.use(historyRouter);
 app.use(launchRouter);
 app.use(contactRouter);
 
+//app listening on port 8001
 app.listen(8001, (err) => {
   if (err) {
     return console.log("Error in connnecting to express server");

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//capsule model
 const capsulesSchema = new mongoose.Schema({
   capsule_serial: {
     type: String,

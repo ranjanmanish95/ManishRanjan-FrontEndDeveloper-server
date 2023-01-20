@@ -1,3 +1,4 @@
+//capsules data
 export const CapsulesData = [
   {
     capsule_serial: "C101",

@@ -1,7 +1,7 @@
 import express from "express";
 import { Launch } from "../models/launch.js";
 const launchRouter = new express.Router();
-
+//launch routes
 launchRouter.get("/launch/all", async (req, res) => {
   try {
     const launch = await Launch.find({});

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//launch schema model
 const launchSchema = new mongoose.Schema({
   flight_number: {
     type: Number,

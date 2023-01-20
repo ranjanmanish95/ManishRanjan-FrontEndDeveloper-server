@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.js";
 
+//auth middleware for authorizing apis
 const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").replace("Bearer ", "");

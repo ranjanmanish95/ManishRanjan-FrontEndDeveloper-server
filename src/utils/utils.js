@@ -4,6 +4,7 @@ import { History } from "../models/history.js";
 import { Capsules } from "../models/capsules.js";
 import { Payload } from "../models/payload.js";
 
+//saves the launches data into launches collection in mongodb
 export async function getLaunches() {
   const launch = await fetch("https://api.spacexdata.com/v3/launches");
   const response = await launch.json();
@@ -28,7 +29,7 @@ export async function getLaunches() {
       });
   }
 }
-
+//saves the capsules data into capsules collection in mongodb
 export async function getCapsules() {
   const capsules = await fetch("https://api.spacexdata.com/v3/capsules");
   const response = await capsules.json();
@@ -52,6 +53,7 @@ export async function getCapsules() {
   }
 }
 
+//saves the history data into history collection in mongodb
 export async function getHistory() {
   const history = await fetch("https://api.spacexdata.com/v3/history");
   const response = await history.json();
@@ -74,7 +76,7 @@ export async function getHistory() {
       });
   }
 }
-
+//saves the payload data into payload collection in mongodb
 export async function getPayload() {
   const payload = await fetch("https://api.spacexdata.com/v3/payloads");
   const response = await payload.json();
